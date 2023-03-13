@@ -6,7 +6,7 @@ echo '</pre>';*/
 
 if (isset($_POST['submit_btn']))
 {
-    if ($_POST['name'] && $_POST['password'] && $_FILES['image']['name'] && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && isset($_POST['password']) && isset($_FILES['image']['name']))
+    if ($_POST['name'] && $_POST['password'] && $_FILES['image']['name'] && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) )
     {
         $name = $_POST['name'];
         $email = $_POST['email'];
