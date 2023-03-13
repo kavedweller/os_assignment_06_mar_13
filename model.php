@@ -19,10 +19,6 @@ if (isset($_POST['submit_btn']))
 
         $userData = array($name, $email, $photo);
 
-        echo '<pre>';
-        print_r($userData);
-        echo '</pre>';
-
         if (file_exists('users.csv'))
         {
             $dataFile = fopen('users.csv', 'a');
@@ -36,9 +32,11 @@ if (isset($_POST['submit_btn']))
 
         session_start();
         setcookie('userName', $name);
+
+        header("Location: view-data.php");
     }
     else
     {
-        echo('Some information is misssing or invalid');
+        echo('<h2><span style="color: red">Error:</span> Some information is misssing or invalid.</h2>');
     }
 }
